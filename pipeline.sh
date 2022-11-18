@@ -16,8 +16,8 @@ BASEURL="https://raw.githubusercontent.com/lauromoraes/microbiom/main/nb-templat
 STEPS=(
 # 	"step-prepare-data"
 # 	"step-quality-control"
-# 	"step-rarefaction-analysis"
-# 	"step-metataxonomy"
+#	"step-rarefaction-analysis"
+#	"step-metataxonomy"
 	"step-diversity-analysis"
 	);
 
