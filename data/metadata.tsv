@@ -1,4 +1,5 @@
 sample-id	class-straw	local-coleta	idade	idade-menarca	tempo-menopausa	menopausa-age-qcut	menopausa-age-bins
+#q2:types	categorical	categorical	numeric	numeric	categorical	categorical	categorical
 M01	PM	LAPAC	56	13	7	3	1
 M03	PM	LAPAC	59	13	8	3	1
 M05	PM	LAPAC	56	10	9	3	1
