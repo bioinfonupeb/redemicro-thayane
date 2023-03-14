@@ -2,13 +2,14 @@
 
 
 # sed -i -e 's/\r$//' pipeline.sh # Correcao de command not found
+
 MYPARAMS=$1; # Parameters file path
 ENV=$2; # Virtual Enviroment name or source path
 
 EXPERIMENT="${1##*/}";	# Remove prefix path
 EXPERIMENT="${EXPERIMENT%%.*}";	# Remove extension
 EXPERIMENTFOLDER="${PWD}/experiments/${EXPERIMENT}";
-MYPARAMS="${EXPERIMENTFOLDER}/${EXPERIMENT}.yaml"
+#MYPARAMS="${EXPERIMENTFOLDER}/${EXPERIMENT}.yaml"
 
 BASEURL="https://raw.githubusercontent.com/lauromoraes/microbiom/main/nb-templates";
 
@@ -52,11 +53,11 @@ fi
 
 
 echo "Processing parameters from: ${MYPARAMS}";
-cat $MYPARAMS;
 
 # Activate virtual environment with all dependences
 source ~/anaconda3/etc/profile.d/conda.sh;
 conda activate ${ENV};
+qiime dev refresh-cache;
 
 # Execute each step
 for i in "${!STEPS[@]}"; do
