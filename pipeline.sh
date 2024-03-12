@@ -18,10 +18,10 @@ STEPS=(
 #	"step-prepare-data"
 #	"step-quality-control"
 #	"step-rarefaction-analysis"
-#	"step-metataxonomy"
+	"step-metataxonomy"
 #	"step-diversity-analysis"
 #	"step-abundance-analysis"
-	"step-picrust2-analysis"
+#	"step-picrust2-analysis"
 	);
 
 STEPSDIR="nb-templates"
@@ -42,19 +42,20 @@ if ! [ -d "$EXECUTEDDIR" ]; then
   mkdir -p ${EXECUTEDDIR};
 fi
 
-# # Download utils.py file
-# if ! [ -f "${STEPSDIR}/utils.py" ]; then
-# 	echo "Downloading: ${STEPSDIR}/utils.py";
-# 	wget "${BASEURL}/utils.py" -O "${STEPSDIR}/utils.py";
-# 	cp "${BASEURL}/utils.py" "${EXECUTEDDIR}/utils.py"
-# 	cp "${BASEURL}/utils.py" "."
-# fi
+# Download utils.py file
+if ! [ -f "${STEPSDIR}/utils.py" ]; then
+  echo "Downloading: ${STEPSDIR}/utils.py";
+  wget "${BASEURL}/utils.py" -O "${STEPSDIR}/utils.py";
+  cp "${BASEURL}/utils.py" "${EXECUTEDDIR}/utils.py"
+  cp "${BASEURL}/utils.py" "."
+fi
 
 
 
 echo "Processing parameters from: ${MYPARAMS}";
 
 # Activate virtual environment with all dependences
+conda init bash
 source ~/anaconda3/etc/profile.d/conda.sh;
 conda activate ${ENV};
 qiime dev refresh-cache;

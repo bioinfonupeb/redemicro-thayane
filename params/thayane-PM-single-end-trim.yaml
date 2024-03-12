@@ -1,9 +1,9 @@
 experiment_name: 'thayane-PM-single-end-trim'
-base_dir: '/home/lauro/nupeb/rede-micro/redemicro-thayane'
-manifest_file: '/home/lauro/nupeb/rede-micro/redemicro-thayane/data/manifest-single.csv'
-metadata_file: '/home/lauro/nupeb/rede-micro/redemicro-thayane/data/single-end-metadata.tsv'
+base_dir: '/mnt/nupeb/rede-micro/redemicro-thayane'
+manifest_file: '/mnt/nupeb/rede-micro/redemicro-thayane/data/manifest-single.csv'
+metadata_file: '/mnt/nupeb/rede-micro/redemicro-thayane/data/single-end-metadata.tsv'
 class_col: 'above_10'
-classifier_file: '/home/lauro/nupeb/16S_classifiers_qiime2/silva-138-99-nb-classifier.qza'
+classifier_file: '/mnt/nupeb/rede-micro/datasets/16S_classifiers_qiime2/silva-138-99-nb-classifier.qza'
 replace_files: False
 phred: 20
 trunc_f: 0
